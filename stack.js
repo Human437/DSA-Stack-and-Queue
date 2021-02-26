@@ -18,3 +18,40 @@ class Stack {
         return currentTop
     }
 }
+
+let starTrek = new Stack()
+starTrek.push('Kirk')
+starTrek.push('Spock')
+starTrek.push('McCoy')
+starTrek.push('Scotty')
+
+
+function peek(stack){
+    return stack.top
+}
+
+function isEmpty(stack){
+    return (stack.top === null)
+}
+
+function display(stack){
+    if(!stack.top){
+        return null
+    }
+    let values = []
+    let currentNode = stack.top
+    while(currentNode !== null){
+        values.push(currentNode.value)
+        currentNode = currentNode.next
+    }
+    return values
+}
+
+console.log(peek(starTrek))
+let test = new Stack()
+console.log(isEmpty(starTrek))
+console.log(isEmpty(test))
+console.log(display(starTrek))
+starTrek.pop()
+starTrek.pop()
+console.log(display(starTrek))

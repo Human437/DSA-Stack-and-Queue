@@ -47,11 +47,13 @@ function display(stack){
     return values
 }
 
-console.log(peek(starTrek))
+// console.log(peek(starTrek))
 let test = new Stack()
-console.log(isEmpty(starTrek))
-console.log(isEmpty(test))
-console.log(display(starTrek))
+// console.log(isEmpty(starTrek))
+// console.log(isEmpty(test))
+// console.log(display(starTrek))
 starTrek.pop()
 starTrek.pop()
-console.log(display(starTrek))
+// console.log(display(starTrek))
+
+module.exports = Stack

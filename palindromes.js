@@ -4,7 +4,7 @@ function is_palindrome(s){
   s = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
   let string = new Stack()
   let output = ''
-  for(let i = s.length-1;i>-1;i--){
+  for(let i = 0;i<s.length;i++){
     string.push(s[i])
   }
   let currentNode = string.top

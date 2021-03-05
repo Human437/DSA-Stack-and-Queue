@@ -1,26 +1,29 @@
-const Stack = require('./stack')
-
 function parentheses(str){
-  let paren = new Stack();
-  let indexOfOpenParen;
-  let indexOfCloseParen;
-  let numOfOpenParen =0;
-  let numOfCloseParen =0;
+  let currentParen = 0;
+  let hasOpenParen = false;
   for(let i =0;i<str.length;i++){
-    if(str[i] === '(' || str[i] === ')'){
-      paren.push(str[i])
-    }
     if(str[i] === '('){
-      indexOfOpenParen = i
-      numOfOpenParen += 1
+      currentParen += 1
+      hasOpenParen = true
     }
     if(str[i]=== ')'){
-      indexOfCloseParen = i
-      numOfCloseParen +=1
+      if(hasOpenParen){
+        currentParen -=1
+        hasOpenParen = false
+      }else{
+        return 'You are missing a ('
+      }
     }
   }
-  // let currentNode = paren.top
-  // let nextNode = paren.top.next
-  // if(currentNode === '(')
-  if()
+  if(currentParen > 0){
+    return `You are missing )`
+  }else if(currentParen < 0){
+    return `You are missing (`
+  }else{
+    return str
+  }
 }
+
+console.log(parentheses('(dfa)'))
+console.log(parentheses('(dfa('))
+console.log(parentheses(')dfa)'))
